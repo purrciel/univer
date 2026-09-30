@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: phplab_app
+    network_mode: slirp4netns
+    ports:
+      - "8088:80"
+    volumes:
+      - .:/var/www/html:z
